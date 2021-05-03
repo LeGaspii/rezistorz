@@ -38,8 +38,8 @@ export default ({
       this.closest(this.closestValuesForE.values, this.ResistValue, true);
       this.addARow('results', 'Closest value for each series', this.closestValuesForE.values);
       this.addARow('results', '%error', this.error(this.closestValuesForE.values, this.ResistValue));
-      document.querySelectorAll('#table td').forEach((e) => { e.classList.add('border-4', 'px-4', 'py-4'); });
-      document.querySelectorAll('#series td').forEach((e) => { e.classList.add('bg-yellow-200'); });
+      document.querySelectorAll('#table td').forEach((e) => { e.classList.add('border', 'p-2', 'rounded'); });
+      document.querySelectorAll('#series td').forEach((e) => { e.classList.add('bg-warning'); });
     },
 
     closest(array, num, fillClosestRow) {
@@ -100,29 +100,26 @@ export default ({
 </script>
 
 <template>
-<div>
-    <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-
-        <h1 class="text-white font-semibold text-5xl mb-2">
-            Tu cherches une valeur standard ?
-        </h1>
-        <div class="bg-white w-100 bg-opacity-75 p-2 rounded-lg">
-            <p>Type a number between 1 and 10.</p>
-            <!-- <input type="number" id="myNumber" value="0"> -->
-            <!-- <p>Type a number between {{ ResistValue}} and 10.</p> -->
-            <input id="myNumber"  v-model="ResistValue"
-                    type='number'>
-            <button @click="resistanceValues()" v-on:keyup.enter="resistanceValues()">
-              Try it
-            </button>
-
-            <div class="w-100">
-            <table id="table" class="table-auto p-2 m-2">
-            <thead id="series"></thead>
-            <tbody id="results"></tbody>
-            </table>
-            </div>
-        </div>
+<div class="">
+  <h1 class="mb-2">
+      Tu cherches une valeur standard ?
+  </h1>
+      <p>Type a number between 1 and 10.</p>
+  <div class="p-2 rounded">
+    <div class="input-group mb-2">
+      <input class="form-control" id="myNumber"  v-model="ResistValue"
+              type='number'>
+      <button class="btn btn-primary" @click="resistanceValues()"
+              v-on:keyup.enter="resistanceValues()">
+        Try it
+      </button>
+    </div>
+      <div class="">
+      <table id="table" class="table table-striped">
+      <thead id="series"></thead>
+      <tbody id="results"></tbody>
+      </table>
+      </div>
     </div>
 </div>
 </template>
