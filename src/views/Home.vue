@@ -1,38 +1,17 @@
 <template>
 <div>
-    <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-
-        <h1 class="text-white font-semibold text-5xl mb-2">
-            Tu cherches une valeur standard ?
-        </h1>
-        <div class="bg-white w-100 bg-opacity-75 p-2 rounded-lg">
-            <h2>Resistances</h2>
-            <p>Type a number between 1 and 10.</p>
-            <!-- <input type="number" id="myNumber" value="0"> -->
-            <!-- <p>Type a number between {{ ResistValue}} and 10.</p> -->
-            <input id="myNumber"  v-model="ResistValue"
-                    type='number'>
-            <button @click="resistanceValues()" v-on:keyup.enter="resistanceValues()">
-              Try it
-            </button>
-
-            <div class="w-100">
-            <table id="table" class="table-auto p-2 m-2">
-            <thead id="series"></thead>
-            <tbody id="results"></tbody>
-            </table>
-            </div>
-        </div>
-    </div>
+  <h2>Resistances</h2>
+  <calc-resist/>
+    <calc-resist/>
 </div>
 </template>
 
 <script>
-// import CalcResist from '../components/CalcResist.vue';
+import CalcResist from '../components/CalcResist.vue';
 
 export default ({
-  component: {
-    // CalcResist,
+  components: {
+    CalcResist,
   },
   data() {
     return {
