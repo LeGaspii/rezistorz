@@ -104,7 +104,8 @@ export default ({
   <h1 class="mb-2">
       Looking after a standard value resistor ?
   </h1>
-      <p>For 383Kohms type 3.83.</p>
+      <p>Type a number between 1 and 10.</p>
+      <p>(For 383Kohms type 3.83)</p>
   <div class="p-2 rounded">
     <div class="input-group mb-2">
       <input class="form-control" id="myNumber"  v-model="ResistValue"
