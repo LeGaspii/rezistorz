@@ -1,7 +1,6 @@
 <template>
 <div>
   <h2>Resistances</h2>
-  <calc-resist/>
     <calc-resist/>
 </div>
 </template>
@@ -49,8 +48,8 @@ export default ({
       this.closest(this.closestValuesForE.values, this.ResistValue, true);
       this.addARow('results', 'Closest value for each series', this.closestValuesForE.values);
       this.addARow('results', '%error', this.error(this.closestValuesForE.values, this.ResistValue));
-      document.querySelectorAll('#table td').forEach((e) => { e.classList.add('border-4', 'px-4', 'py-4'); });
-      document.querySelectorAll('#series td').forEach((e) => { e.classList.add('bg-yellow-200'); });
+      document.querySelectorAll('#table td').forEach((e) => { e.classList.add('border', 'p-3'); });
+      document.querySelectorAll('#series td').forEach((e) => { e.classList.add('bg-success'); });
     },
 
     closest(array, num, fillClosestRow) {
