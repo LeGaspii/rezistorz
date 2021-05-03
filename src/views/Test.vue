@@ -2,6 +2,8 @@
   <div>
     <p>coucou</p>
     <calc-resist/>
+    <p>coucou</p>
+    <calc-resist/>
   </div>
 </template>
 
