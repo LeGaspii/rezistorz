@@ -1,15 +1,16 @@
 <template>
-<div class="container">
+  <div>
+    <p>coucou</p>
     <calc-resist/>
-</div>
+  </div>
 </template>
 
 <script>
 import CalcResist from '../components/CalcResist.vue';
 
-export default ({
-  components: {
-    CalcResist,
-  },
-});
+export default {
+  components: { CalcResist },
+  name: 'test',
+};
+
 </script>
