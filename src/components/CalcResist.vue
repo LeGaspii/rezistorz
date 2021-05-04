@@ -18,6 +18,10 @@ export default ({
       let arrayE = [];
       let i;
       let t;
+      if (this.ResistValue > 10 || this.ResistValue < 1) {
+        window.alert('The input must be between 1 and 10');
+        this.ResistValue = 1.5;
+      }
       // eslint-disable-next-line no-restricted-syntax
       for (i in this.closestValuesForE.keys) {
         if (i) {
@@ -96,21 +100,32 @@ export default ({
       table.appendChild(rowNode);
     },
   },
+  mounted() {
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') {
+        this.resistanceValues();
+      }
+    });
+  },
 });
 </script>
 
 <template>
 <div class="">
-  <h1 class="mb-2">
-      Tu cherches une valeur standard ?
+  <h1 class="mb-2 text-responsive">
+      Looking after a standard value resistor ?
   </h1>
       <p>Type a number between 1 and 10.</p>
+      <p>(For 383Kohms type 3.83)</p>
   <div class="p-2 rounded">
     <div class="input-group mb-2">
-      <input class="form-control" id="myNumber"  v-model="ResistValue"
+      <input  class="form-control" id="myNumber"
+              v-model="ResistValue"
+              min="1" max="10"
               type='number'>
-      <button class="btn btn-primary" @click="resistanceValues()"
-              v-on:keyup.enter="resistanceValues()">
+      <button class="btn btn-primary"
+              @click="resistanceValues()"
+              >
         Try it
       </button>
     </div>
@@ -123,3 +138,9 @@ export default ({
     </div>
 </div>
 </template>
+
+<style scoped>
+.text-responsive {
+  font-size: calc(100% + 1vw + 1vh);
+}
+</style>

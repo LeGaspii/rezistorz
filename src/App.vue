@@ -1,19 +1,11 @@
 <template>
   <div id="app">
     <div id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Resistors</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+          <a class="navbar-brand" href="#">Standard Resistor Value</a>
+    <div class="" id="navbarNav">
         <ul class="navbar-nav">
         <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/test">Test</a>
+            <a class="nav-link border rounded p-1 bg-secondary text-white" href="/">Refresh</a>
         </li>
         <!-- <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
@@ -38,7 +30,8 @@
 }
 
 #nav {
-  padding: 30px;
+  /* padding: 30px; */
+  height-max: 100px;
 }
 
 #nav a {
@@ -46,7 +39,4 @@
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
