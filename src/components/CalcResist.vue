@@ -9,7 +9,7 @@ export default ({
         EList: ['E12', 'E24', 'E48', 'E96', 'E192'],
         values: [0, 0, 0, 0, 0],
       },
-      ResistValue: 1.5,
+      ResistValue: parseFloat(Math.random(1) * 10).toFixed(2),
     };
   },
   methods: {
@@ -19,7 +19,7 @@ export default ({
       let i;
       let t;
       if (this.ResistValue > 10 || this.ResistValue < 1) {
-        window.alert('The input must be between 1 and 10');
+        window.alert('The input must be between 1 and 10!');
         this.ResistValue = 1.5;
       }
       // eslint-disable-next-line no-restricted-syntax
@@ -52,6 +52,7 @@ export default ({
       let ans;
       let savedI = 0;
       const closestRow = [0, 0, 0, 0, 0];
+
       // eslint-disable-next-line no-restricted-syntax
       for (i in array) {
         if (i) {
@@ -116,7 +117,7 @@ export default ({
       Looking after a standard value resistor ?
   </h1>
       <p>Type a number between 1 and 10.</p>
-      <p>(For 383Kohms type 3.83)</p>
+      <p>(For {{ Math.round(ResistValue * 100) }} kohms type {{ ResistValue }})</p>
   <div class="p-2 rounded">
     <div class="input-group mb-2">
       <input  class="form-control" id="myNumber"
@@ -126,7 +127,7 @@ export default ({
       <button class="btn btn-primary"
               @click="resistanceValues()"
               >
-        Try it
+        Find
       </button>
     </div>
       <div class="">
