@@ -1,6 +1,7 @@
 <template>
 <div class="container">
-    <calc-resist/>
+    <calc-resist :key="1"/>
+    <img src="../assets/resvalue.jpg">
 </div>
 </template>
 

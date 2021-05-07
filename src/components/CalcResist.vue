@@ -41,7 +41,7 @@ export default ({
       this.addARow('series', 'Series', this.closestValuesForE.EList);
       this.closest(this.closestValuesForE.values, this.ResistValue, true);
       this.addARow('results', 'Closest value for each series', this.closestValuesForE.values);
-      this.addARow('results', '%error', this.error(this.closestValuesForE.values, this.ResistValue));
+      this.addARow('results', '%error vs target resistor', this.error(this.closestValuesForE.values, this.ResistValue));
       document.querySelectorAll('#table td').forEach((e) => { e.classList.add('border', 'p-2', 'rounded'); });
       document.querySelectorAll('#series td').forEach((e) => { e.classList.add('bg-warning'); });
     },
@@ -123,11 +123,12 @@ export default ({
       <input  class="form-control" id="myNumber"
               v-model="ResistValue"
               min="1" max="10"
-              type='number'>
+              type='number'
+              step="0.01">
       <button class="btn btn-primary"
               @click="resistanceValues()"
               >
-        Find
+        Find target resistor
       </button>
     </div>
       <div class="">
